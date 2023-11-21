@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Medicine Recommendations</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .recommendations {
+            margin-top: 20px;
+        }
+
+        .recommendation-box {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .allopathy-box {
+            background-color: #87CEEB; /* Sky Blue */
+        }
+
+        .ayurveda-box {
+            background-color: #8FBC8F; /* Dark Olive Green */
+        }
+
+        .recommendation-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Medicine Recommendations</h1>
+    </div>
+    <div class="recommendations">
+        <div class="recommendation-box allopathy-box">
+            <h2>Allopathy Recommendations:</h2>
+            <ul>
+                {% for recommendation in allopathy_recommendations %}
+                <li class="recommendation-item">{{ recommendation }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="recommendation-box ayurveda-box">
+            <h2>Ayurveda Recommendations:</h2>
+            <ul>
+                {% for recommendation in ayurveda_recommendations %}
+                <li class="recommendation-item">{{ recommendation }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
